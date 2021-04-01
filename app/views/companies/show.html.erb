@@ -1,0 +1,24 @@
+<div class="container">
+<h1 class="headline" ><%= @company.name %></h1>
+
+<div>
+  <h3>仕事内容</h3>
+  <p><%= @company.content %></p>
+  <h3>メモ</h3>
+  <p><%= @company.memo %></p>
+  <h3>応募サイト</h3>
+  <p><%= @company.apply_site %></p>
+  <h3>企業HP</h3>
+  <p><%= @company.hp %></p>
+  <h3>現在状況</h3>
+  <p>
+    <%= print_recruit_status(@company) %>
+  </p>
+</div>
+
+<%= link_to "戻る", root_path , class: 'btn btn-outline-secondary' %>
+<%= link_to "編集", edit_company_path(@company.id) , class: 'btn btn-outline-secondary' %>
+<%= link_to "削除", company_path(@company.id) ,method: :delete, class: 'btn btn-outline-secondary' %>
+
+</div>
+

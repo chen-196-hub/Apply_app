@@ -1,0 +1,87 @@
+<div class="container">
+<h1 class="headline">会社応募リスト</h1>
+<!-- <p>Find me in app/views/companies/index.html.erb</p> -->
+
+  <%= link_to "New", new_company_path,class: 'btn btn-outline-secondary' %>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">
+      # 
+    </th>
+    <th scope="col">
+      会社名 
+    </th>
+    <th scope="col">
+      仕事内容
+    </th>
+    <th scope="col">
+      メモ
+    </th>
+
+    <th scope="col">
+      順位
+    </th>
+    <th scope="col">
+      応募状況
+    </th>
+    <th scope="col">
+      
+    </th>
+    <th scope="col">
+      
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <% @companies.each_with_index do |company , idx| %>
+  <tr>
+    <td scope="row">
+      <%= idx+1 %>
+    </td>
+    <td scope="row">
+      <%= company.name %>
+    </td>
+    <td scope="row">
+      <%= company.short_content %>
+    </td>
+    <td scope="row">
+      <%= company.short_description %>
+    </td>
+  
+    <td scope="row">
+      <% if company.sequence != @companies.ids.first %>
+        <%= link_to up_company_path(company) do %>
+          <i class="fas fa-chevron-up"></i>
+        <% end %>
+      <% end %>
+      <% if company.sequence != @companies.ids.last %>
+        <%= link_to down_company_path(company) do %>
+          <i class="fas fa-chevron-down"></i>
+        <% end %>
+      <% end %>
+      <!-- https://qiita.com/knt45/items/c76b246ad448f3814ae4 -->
+    </td>
+    <td scope="row">
+      <%= print_recruit_status(company) %>
+    </td>
+    <td scope="row">
+       <%= link_to "詳細", company_path(company) %>
+    </td>
+    <td scope="row">
+      <%= link_to "編集", edit_company_path(company) %>
+    </td>
+    <td scope="row">
+      <%= link_to "✖️", company_path(company), method: :delete , data: { confirm: '本当に削除しますか?' }  %>
+    </td>
+  </tr>
+  <% end %>
+
+  <tr>
+
+  </tr>
+</tbody>
+</table>
+</div>

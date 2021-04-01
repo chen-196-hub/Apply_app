@@ -1,0 +1,42 @@
+<div class="container">
+
+  <h1>企業追加</h1>
+  <!-- <p>Find me in app/views/companies/new.html.erb</p> -->
+  <div class="form-body">
+    <% @company.errors.full_messages.each do | m |%>
+      <li class="form-error">
+        <%= m %>
+      </li>
+    <% end %>
+  </div>
+ 
+    <%= form_with model: @company, loal: true do |f| %>
+    <form>
+        <%= f.label :name, "会社名"  %>  
+        <%= f.text_field :name, class: 'form-control',placeholder: "Example.Co",value: @company.name %>
+        
+        <%= f.label :content, "事業内容" %>
+        <%= f.text_field :content, class: 'form-control',placeholder: "ex:受託開発",value: @company.content %>
+
+        <%= f.label :memo, "メモ" %>
+        <%= f.text_area :memo, class: "form-control", rows: "3", value:@company.memo  %>
+
+        <%= f.label :apply_site, "募集サイト" %>
+        <%= f.text_field :apply_site, class:'form-control',placeholder:"example/recruit.com" %>
+
+        <%= f.label :hp, "企業HP" %>
+        <%= f.text_field :hp ,class: "form-control", placeholde:"Example.com"%>
+
+        <%= f.label :recruit_status, "応募状況" %>
+        <%= f.select :recruit_status, [["選択"],["検討中",1],["応募済み-書類選考",2],["応募済み-面接",3],["内定",4],["不合格",5]] ,{},{class:"form-control"} %>
+      
+        <%= link_to "戻る", root_path, class: 'btn btn-light' %>
+        <%= f.submit nil , disable_with: '追加中...', class:"btn btn-primary"%>
+
+      </form>
+    <% end %>
+ 
+
+
+
+</div>
