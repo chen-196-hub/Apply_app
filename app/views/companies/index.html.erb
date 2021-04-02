@@ -52,12 +52,12 @@
     </td>
   
     <td scope="row">
-      <% if company.sequence != @companies.ids.first %>
+      <% if idx != 0 %>
         <%= link_to up_company_path(company) do %>
           <i class="fas fa-chevron-up"></i>
         <% end %>
       <% end %>
-      <% if company.sequence != @companies.ids.last %>
+      <% if idx+1 != @companies.length %>
         <%= link_to down_company_path(company) do %>
           <i class="fas fa-chevron-down"></i>
         <% end %>

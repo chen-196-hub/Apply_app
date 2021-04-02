@@ -7,7 +7,6 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    
   end
 
   def new
@@ -26,8 +25,8 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    
   end
+  
   def update
     if @company.update(company_paramas)
     redirect_to company_path
