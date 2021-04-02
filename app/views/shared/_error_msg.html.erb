@@ -1,0 +1,7 @@
+<div class="form-body">
+  <% @company.errors.full_messages.each do | m |%>
+    <li class="form-error">
+      <%= m %>
+    </li>
+  <% end %>
+</div>
