@@ -18,7 +18,7 @@
 
 <%= link_to "戻る", root_path , class: 'btn btn-outline-secondary' %>
 <%= link_to "編集", edit_company_path(@company.id) , class: 'btn btn-outline-secondary' %>
-<%= link_to "削除", company_path(@company.id) ,method: :delete, class: 'btn btn-outline-secondary' %>
+<%= link_to "削除", company_path(@company.id) ,method: :delete, class: 'btn btn-outline-secondary', data: { confirm: '本当に削除しますか?' } %>
 
 </div>
 
