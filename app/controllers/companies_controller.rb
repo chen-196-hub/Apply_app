@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :set_company , only: %i[show edit update destroy up down]
+  before_action :set_company , only: %i[show edit update destroy up down remove_img]
   before_action :set_companies , only: %i[up down]
 
   def index
@@ -37,7 +37,14 @@ class CompaniesController < ApplicationController
   
   def destroy
     @company.destroy
+    @company.remove_avatar!
     redirect_to root_path
+  end
+
+  def remove_img
+    @company.remove_avatar!
+    @company.save
+    render :edit
   end
 
   def up
@@ -53,7 +60,7 @@ class CompaniesController < ApplicationController
 
   private
   def company_paramas
-    params.require(:company).permit(:name,:content,:memo,:apply_site,:hp,:recruit_status)
+    params.require(:company).permit(:name,:content,:memo,:apply_site,:hp,:recruit_status,:avatar)
   end
   def set_company
     @company = Company.find(params[:id])

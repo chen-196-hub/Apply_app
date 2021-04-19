@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       get 'up'
       get 'down'
+      get 'remove_img'
     end
   end
   
