@@ -11,6 +11,8 @@ module CompaniesHelper
       "内定"
     when 5
       "不合格"
+    when 6
+      "返信待ち"
     else 
       "不明"
     end

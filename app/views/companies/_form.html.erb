@@ -18,8 +18,16 @@
     <%= f.text_field :hp ,class: "form-control", placeholder:"Example.com" ,value:@company.hp%>
 
     <%= f.label :recruit_status, "応募状況" %>
-    <%= f.select :recruit_status, [["選択"],["検討中",1],["応募済み-書類選考",2],["応募済み-面接",3],["内定",4],["不合格",5]] ,{},{class:"form-control"} %>
- 
+    <%= f.select :recruit_status, [["選択"],["検討中",1],["応募済み-書類選考",2],["応募済み-面接",3],["内定",4],["不合格",5],["返信待ち",6]] ,{},{class:"form-control"} %>
+    <div>
+      <%= f.label :avatar, "写真" %>
+    </div>
+    <%= render 'shared/avatar_icon' %>
+    <% if @company.avatar? %>
+      <%= link_to "削除", remove_img_company_path(@company.id), data: { confirm: '本当に削除しますか?' }%>
+    <% end %>
+    <%= f.file_field :avatar ,multipart: true,class: "form-control-file" %>
+    <br>
     <%= link_to "戻る", root_path, class: 'btn btn-light' %>
     <%= f.submit nil , disable_with: '追加中...', class:"btn btn-primary"%>
   </div>

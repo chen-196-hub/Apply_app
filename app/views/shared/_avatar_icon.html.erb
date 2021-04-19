@@ -1,0 +1,5 @@
+<% if @company.avatar? %>
+    <%= image_tag @company.avatar.thumb.url %>
+<% else %>
+    <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg", :size => '100x100' %>
+<% end %>

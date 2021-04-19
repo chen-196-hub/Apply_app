@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   validates_presence_of :name ,:apply_site 
   
   def short_description
