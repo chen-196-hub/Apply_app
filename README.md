@@ -13,17 +13,18 @@
   - 個別一覧機能
   - 順番変更機能
   - 応募状況機能
+  - 画像アップロード機能
 ...など
 
 ## リリース予定
 
 -  devise　：ログイン機能
--  carrierwave　：ファイルや画像アップロード機能
+
 
 ## アプリケーション内で使用している技術
 - 言語：Ruby 2.7.2
 - フレームワーク：Ruby on Rails 6.1.3
-- Gem: 'font-awesome-sass','bootstrap','rspec-rails'
+- Gem: 'font-awesome-sass','bootstrap','rspec-rails','carrierwave'
 
 ## なぜ作ったのか
 ポートフォリとしては[KakeiNet](https://github.com/chen-196-hub/kakei_app) 作ったのですが、いくつか自分が納得できないところがありました。
