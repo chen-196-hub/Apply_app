@@ -25,11 +25,11 @@
 - 言語：Ruby 2.7.2
 - フレームワーク：Ruby on Rails 6.1.3
 - Gem: 
- - 'font-awesome-sass'
- - 'bootstrap'
- - 'rspec-rails'
- - 'carrierwave'
- - 'mini_magick'
+  - 'font-awesome-sass'
+  - 'bootstrap'
+  - 'rspec-rails'
+  - 'carrierwave'
+  - 'mini_magick'
 ## なぜ作ったのか
 ポートフォリとしては[KakeiNet](https://github.com/chen-196-hub/kakei_app) 作ったのですが、いくつか自分が納得できないところがありました。
 就職活動の間、応募用のリストあったらいいなという思いから、学んだ新しいことの練習も含み、作ってみました。
